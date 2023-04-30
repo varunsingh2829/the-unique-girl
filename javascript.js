@@ -1,10 +1,20 @@
+let quotesIndex = 0;
 var inc = 1000;
+var incquotes = 2000;
 let datetime = document.querySelector(".date-time");
 let dayele = document.querySelector(".day");
 let dateele = document.querySelector(".date");
 let monthele = document.querySelector(".month");
 let yearele = document.querySelector(".year");
+let quotesDiv = document.querySelector(".quotes");
 const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const quotes = [
+  `there's only one thing more precious than <br/>
+our time and that's who we spend it on`,
+  `always remember you are only once`,
+  `Your time is limited, so spend it on valuable things.`,
+  `You can not make up for lost time. <br/> You can only do better in the future`,
+];
 const fulldays = [
   "Sunday",
   "Monday",
@@ -34,6 +44,7 @@ let month =
   date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
 let year = date.getFullYear();
 let dte = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
+quotesDiv.innerHTML = quotes[0];
 clock();
 function clock() {
   const date = new Date();
@@ -52,6 +63,12 @@ function clock() {
   document.querySelector(".minute").style.transform = `rotate(${minute}deg)`;
   document.querySelector(".second").style.transform = `rotate(${second}deg)`;
 }
+const handleQuotes = () => {
+  quotesIndex = quotes.length <= quotesIndex + 1 ? 0 : ++quotesIndex;
+  quotesDiv.innerHTML = quotes[quotesIndex];
+};
+
+setInterval(handleQuotes, incquotes);
 setInterval(clock, inc);
 
 let dateelement = document.createElement("h3");
