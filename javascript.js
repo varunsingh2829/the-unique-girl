@@ -10,10 +10,7 @@ let quotesDiv = document.querySelector(".quotes");
 const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const quotes = [
   `there's only one thing more precious than <br/>
-our time and that's who we spend it on`,
-  `always remember you are only once`,
-  `Your time is limited, so spend it on valuable things.`,
-  `You can not make up for lost time. <br/> You can only do better in the future`,
+our time and that's is only your smile`
 ];
 const fulldays = [
   "Sunday",
